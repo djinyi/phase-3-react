@@ -5,7 +5,7 @@ import Edit from "./Edit"
 function Post({ creator, id, title, genre, description, price, image, onDeletePost }) {
 
 const [showEdit, setShowEdit] = useState(true);
-const [edit, newEdit] = useState(description)
+const [edit, setEdit] = useState(description)
 
 console.log(image)
 
@@ -20,7 +20,7 @@ function handleDeleteClick() {
 const site=`http://localhost:9292/posts/${id}`;
 
 function newEditing(description) {
-newEdit(description)
+setEdit(description)
 }
 
 
@@ -35,7 +35,7 @@ newEdit(description)
             <p>Price: ${price}</p>
             <img src={image}></img>
 
-            <p></p><Edit id={id} newEditing={newEditing} description={edit}/>
+            <p></p><Edit id={id} newEditing={newEditing} edit={edit} setEdit={setEdit}/>
             <button onClick={handleDeleteClick}> Delete </button>
 
 

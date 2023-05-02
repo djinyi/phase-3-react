@@ -1,45 +1,52 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { EditText, EditTextarea } from 'react-edit-text';
+import 'react-edit-text/dist/index.css';
 
 
-function Edit({id, newEditing, edit}){
-const [description, setDescription] = useState([])
+function Edit({id, newEditing, edit, setEdit}){
 
-function handleUp(e) {
 
-    e.preventDefault();
-    console.log(description, id)
-       
+function handleChange(e, setFn) {
+
+  setFn(e.target.value)
+  console.log(edit)
+}
+
+function handleSave(e){
+
+  e.preventDefault();
+
        fetch(`http://localhost:9292/posts/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            description: description
+            description: edit
         }),
     })
     .then((r) => r.json())
     .then((updated) => newEditing(updated.description))
 
-    setDescription("");
+
 }
+console.log(edit)
+
 
     return(
         <div>
         <label> Edit Description: </label>
-        <form onSubmit={handleUp}>
-
-            <input
-            type="text"
-            id="title"
+<form onSubmit={handleSave}>
+          <EditText
+          name="textbox"
+          style={{width: '200px'}} 
+          value={edit}
+          onChange={(e) => handleChange(e, setEdit)}
   
-            value={edit}
-            onChange={e => setDescription(e.target.value)}
-            />
-
-            <button> Submit </button>
-            </form>
+          showEditButton />
+   <button> Submit </button>
+</form>
             </div>
     )
 }
