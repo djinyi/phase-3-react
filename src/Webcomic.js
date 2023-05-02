@@ -36,7 +36,7 @@ setEdit(description)
             <img src={image}></img>
 
             <p></p><Edit id={id} newEditing={newEditing} edit={edit} setEdit={setEdit}/>
-            <button onClick={handleDeleteClick}> Delete </button>
+            <button onClick={handleDeleteClick}> Delete Post</button>
 
 
             </div>
