@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Edit from "./Edit"
 
 
-function Post({ creator, id, title, genre, description, price, onDeletePost }) {
+function Post({ creator, id, title, genre, description, price, image, onDeletePost }) {
 
 const [showEdit, setShowEdit] = useState(true);
 const [edit, newEdit] = useState(description)
@@ -33,7 +33,7 @@ newEdit(description)
             <p>Description: {edit}</p>
             <p>Creator ID: {creator}</p>
             <p>Price: ${price}</p>
-            <img src="https://i.imgur.com/qxIUf4O.png"></img>
+            <img src={image}></img>
 
             <p></p><Edit id={id} newEditing={newEditing}/>
             <button onClick={handleDeleteClick}> Delete </button>

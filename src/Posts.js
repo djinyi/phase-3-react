@@ -25,6 +25,7 @@ function PostList() {
         description={webcomic.description}
         creator={webcomic.creator_id}
         price={webcomic.price}
+        image={webcomic.image}
         onDeletePost={handleDeletePost}
         />
     ))
