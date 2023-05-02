@@ -6,6 +6,7 @@ function NewComic({ addNew }){
     const [genre, setGenre] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
+    const [image, setImage] = useState("");
 
 
 
@@ -13,7 +14,7 @@ function NewComic({ addNew }){
         e.preventDefault();
 
         const formData = {
-            title, creator, genre, description, price
+            title, creator, genre, description, price, image
         }
         console.log(formData)
         fetch("http://localhost:9292/posts", {
@@ -31,6 +32,7 @@ function NewComic({ addNew }){
         setGenre("");
         setDescription("");
         setPrice("");
+        setImage("");
     }
 
     return(
@@ -71,6 +73,13 @@ function NewComic({ addNew }){
                 id="price"
                 value={price}
                 onChange={e=> setPrice(e.target.value)}
+                />
+                <label>  Image URL</label>
+                <input
+                type="text"
+                id="image"
+                value={image}
+                onChange={e=> setImage(e.target.value)}
                 />
                 <button type="submit"> Submit </button>
             </form>
