@@ -7,7 +7,7 @@ function Post({ creator, id, title, genre, description, price, image, onDeletePo
 const [showEdit, setShowEdit] = useState(true);
 const [edit, newEdit] = useState(description)
 
-
+console.log(image)
 
 function handleDeleteClick() {
     fetch(`http://localhost:9292/posts/${id}`, {
@@ -31,11 +31,11 @@ newEdit(description)
             <h3>Title: {title}</h3>
             <h3>Genre: {genre} </h3>
             <p>Description: {edit}</p>
-            <p>Creator ID: {creator}</p>
+            <p>Creator: {creator}</p>
             <p>Price: ${price}</p>
             <img src={image}></img>
 
-            <p></p><Edit id={id} newEditing={newEditing}/>
+            <p></p><Edit id={id} newEditing={newEditing} description={edit}/>
             <button onClick={handleDeleteClick}> Delete </button>
 
 

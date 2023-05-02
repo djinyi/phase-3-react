@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 
-function Edit({id, newEditing}){
+function Edit({id, newEditing, edit}){
 const [description, setDescription] = useState([])
 
 function handleUp(e) {
@@ -33,8 +33,8 @@ function handleUp(e) {
             <input
             type="text"
             id="title"
-            placeholder="Type in new description..."
-            value={description}
+  
+            value={edit}
             onChange={e => setDescription(e.target.value)}
             />
 
