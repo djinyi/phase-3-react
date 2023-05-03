@@ -4,7 +4,7 @@ import Edit from "./Edit"
 
 function Post({ creator, id, title, genre, description, price, image, onDeletePost }) {
 
-const [showEdit, setShowEdit] = useState(true);
+
 const [edit, setEdit] = useState(description)
 
 console.log(image)

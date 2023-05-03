@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function NewComic({ addNew }){
+function NewWebcomic({ addNew }){
     const [title, setTitle] = useState("");
     const [creator, setCreator] = useState("");
     const [genre, setGenre] = useState("");
@@ -87,4 +87,4 @@ function NewComic({ addNew }){
     )
 }
 
-export default NewComic
+export default NewWebcomic
