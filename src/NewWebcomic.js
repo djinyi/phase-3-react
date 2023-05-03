@@ -1,20 +1,17 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
+import styled from "styled-components";
 
 function NewWebcomic({ addNew }){
     const [title, setTitle] = useState("");
-    const [creator, setCreator] = useState("");
     const [genre, setGenre] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
-    const [image, setImage] = useState("");
-
-
 
     function handleSubmit(e) {
         e.preventDefault();
 
         const formData = {
-            title, creator, genre, description, price, image
+            title, genre, description, price
         }
         console.log(formData)
         fetch("http://localhost:9292/posts", {
@@ -28,16 +25,14 @@ function NewWebcomic({ addNew }){
         .then((newWebcomic)=> addNew(newWebcomic))
 
         setTitle("");
-        setCreator("")
         setGenre("");
         setDescription("");
         setPrice("");
-        setImage("");
     }
 
     return(
-        <div>
-            <h3>Submit New Webcomic</h3>
+        <Detail>
+            <h2>Submit New Webcomic</h2>
             <form onSubmit={handleSubmit}>
                 <label>Title</label>
                 <input
@@ -45,13 +40,6 @@ function NewWebcomic({ addNew }){
                 id="title"
                 value={title}
                 onChange={e=> setTitle(e.target.value)}
-                />
-                <label>  Creator</label>
-                <input
-                type="text"
-                id="creator"
-                value={creator}
-                onChange={e=> setCreator(e.target.value)}
                 />
                 <label>  Genre</label>
                 <input
@@ -74,17 +62,32 @@ function NewWebcomic({ addNew }){
                 value={price}
                 onChange={e=> setPrice(e.target.value)}
                 />
-                <label>  Image URL</label>
-                <input
-                type="text"
-                id="image"
-                value={image}
-                onChange={e=> setImage(e.target.value)}
-                />
                 <button type="submit"> Submit </button>
             </form>
-        </div>
+            <p></p>
+        </Detail>
     )
 }
 
-export default NewWebcomic
+export default NewWebcomic;
+
+const Detail = styled.div`
+display-direction:flex;
+flex-direction:column;
+color:black;
+margin: auto;
+text-align: center;
+font-family: "Times New Roman", Times, serif
+button{
+    margin-left: 10px;
+}
+h2{
+    font-size: 30px;
+    text-align: center;
+    padding: 25px 45px 25px 45px;
+    background-color: rgba(135, 206, 235, .2);
+}
+p{
+    margin-bottom: 50px
+}
+`
