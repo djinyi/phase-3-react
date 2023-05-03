@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Edit from "./Edit"
+import Edit from "./Edit";
+import styled from "styled-components";
 
 
-function Post({ creator, id, title, genre, description, price, image, onDeletePost }) {
+function Webcomic({ creator, id, title, genre, description, price, image, onDeletePost }) {
 
 
 const [edit, setEdit] = useState(description)
 
-console.log(image)
 
 function handleDeleteClick() {
     fetch(`http://localhost:9292/posts/${id}`, {
@@ -25,8 +25,7 @@ setEdit(description)
 
 
     return (
-        <div>
-
+        <ComicDetail>
             <div className="post"> 
             <h3>Title: {title}</h3>
             <h3>Genre: {genre} </h3>
@@ -34,14 +33,39 @@ setEdit(description)
             <p>Creator: {creator}</p>
             <p>Price: ${price}</p>
             <img src={image}></img>
-
-            <p></p><Edit id={id} newEditing={newEditing} edit={edit} setEdit={setEdit}/>
+            <Edit id={id} newEditing={newEditing} edit={edit} setEdit={setEdit}/>
             <button onClick={handleDeleteClick}> Delete Post</button>
-
-
+            <p>_____________________________________</p>
             </div>
-        </div>
+        </ComicDetail>
     )
 }
 
-export default Post;
+export default Webcomic;
+
+const ComicDetail = styled.div`
+display-direction:flex;
+flex-direction:column;
+color:black;
+margin: auto;
+text-align: center;
+font-family: "Times New Roman", Times, serif
+h3{
+    font-size:30px;
+    border-bottom:solid;
+    border-color:#42ddf5
+}
+.wrapper{
+    display:flex;
+    div{
+        margin:10px;
+    }
+}
+img{
+    width:600px;
+    margin: 10px;
+}
+button{
+    margin-top: 10px;
+}
+`
