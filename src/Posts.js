@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Webcomic from "./Webcomic";
 import NewWebcomic from "./NewWebcomic";
+import styled from "styled-components";;
 
-function PostList() {
+function Posts() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -23,7 +24,7 @@ function PostList() {
         title={webcomic.title}
         genre={webcomic.genre}
         description={webcomic.description}
-        creator={webcomic.creator.name}
+        creator={webcomic.id}
         price={webcomic.price}
         image={webcomic.image}
         onDeletePost={handleDeletePost}
@@ -35,12 +36,21 @@ function PostList() {
     }
 
     return(
-        <div className="body">
+        <PostStyle className="body">
             <h2>Posts</h2>
             <div>{post}</div>
             <NewWebcomic addNew={addNew}/>
-        </div>
+        </PostStyle>
     )
 }
 
-export default PostList;
+export default Posts;
+
+const PostStyle = styled.div`
+h2{
+    font-size: 40px;
+    text-align: center;
+    padding: 25px 45px 25px 45px;
+    background-color: rgba(135, 206, 235, .2);
+}
+`
