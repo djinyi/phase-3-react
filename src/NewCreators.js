@@ -43,7 +43,7 @@ function NewCreator({ addNew }){
     )
 }
 
-export default NewWebcomic;
+export default NewCreator;
 
 const Detail = styled.div`
 display-direction:flex;
