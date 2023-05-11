@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Webcomic from "./Webcomic";
 import NewWebcomic from "./NewWebcomic";
-import styled from "styled-components";;
+import styled from "styled-components";
+import Creators from "./Creators";
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -38,6 +39,7 @@ function Posts() {
     return(
         <PostStyle className="body">
             <h2>Webcomics for Birds</h2>
+            <div><Creators /></div>
             <div>{post}</div>
             <NewWebcomic addNew={addNew}/>
         </PostStyle>
