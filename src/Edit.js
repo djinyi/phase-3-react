@@ -8,9 +8,7 @@ function Edit({id, newEditing, edit, setEdit}){
 
 
 function handleChange(e, setFn) {
-
   setFn(e.target.value)
-  console.log(edit)
 }
 
 function handleSave(e){
@@ -35,38 +33,29 @@ console.log(edit)
 
 
     return(
-        <div>
+        <Detail>
         <label> Edit Description: </label>
-<form onSubmit={handleSave}>
+        <form onSubmit={handleSave}>
           <EditText
           name="textbox"
-          style={{width: '200px'}} 
+          style={{width: '200px', marginLeft: '700px'}} 
           value={edit}
           onChange={(e) => handleChange(e, setEdit)}
-  
           showEditButton />
-   <button> Submit </button>
-</form>
-            </div>
+          <button> Submit </button>
+          </form>
+          </Detail>
     )
 }
 
 export default Edit;
 
-const FormStyle= styled.div`
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  }
-button{
-    background-color: #87CEEB;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
+
+const Detail = styled.div`
+display-direction:flex;
+flex-direction:column;
+color:black;
+margin: auto;
+text-align: center;
+font-family: "Times New Roman", Times, serif
 `

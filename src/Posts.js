@@ -37,7 +37,7 @@ function Posts() {
 
     return(
         <PostStyle className="body">
-            <h2>Posts</h2>
+            <h2>Webcomics for Birds</h2>
             <div>{post}</div>
             <NewWebcomic addNew={addNew}/>
         </PostStyle>
