@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 function Creators(){
@@ -12,11 +12,14 @@ function Creators(){
     }, [])
 
     const list = creators.map((creator) => (
-        <p>Creator: {creator.name}</p>
+        <p>*{creator.name}</p>
     ))
 
     return(
+        <div>
+        <h3>List of creators:</h3>
         <p>{list}</p>
+        </div>
     )
 }
 
