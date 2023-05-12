@@ -40,10 +40,10 @@ function Posts() {
     return(
         <PostStyle className="body">
             <h2>Webcomics for Birds</h2>
-            <div><NewCreators /></div>
-            <div><Creators /></div>
             <div>{post}</div>
             <NewWebcomic addNew={addNew}/>
+            <div><Creators /></div>
+            <div><NewCreators /></div>
         </PostStyle>
     )
 }
