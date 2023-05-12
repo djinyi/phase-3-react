@@ -3,6 +3,7 @@ import Webcomic from "./Webcomic";
 import NewWebcomic from "./NewWebcomic";
 import styled from "styled-components";
 import Creators from "./Creators";
+import NewCreators from "./NewCreators"
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -39,6 +40,7 @@ function Posts() {
     return(
         <PostStyle className="body">
             <h2>Webcomics for Birds</h2>
+            <div><NewCreators /></div>
             <div><Creators /></div>
             <div>{post}</div>
             <NewWebcomic addNew={addNew}/>

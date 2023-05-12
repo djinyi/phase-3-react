@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 function Creators(){
-    const [creators, setCreators] = useState("")
+    const [creators, setCreators] = useState([])
 
 
     useEffect(() => {
@@ -11,14 +11,16 @@ function Creators(){
         .then((data) => setCreators(data))
     }, [])
 
-    const list = creators.map((creator) => (
-        <p>*{creator.name}</p>
-    ))
+    const list = creators.map((creator)=>{
+        return <p>+ {creator.name}</p>
+    })
+
+    console.log(list)
 
     return(
         <div>
         <h3>List of creators:</h3>
-        <p>{list}</p>
+        <div>{list}</div>
         </div>
     )
 }

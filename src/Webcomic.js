@@ -17,7 +17,7 @@ function handleDeleteClick() {
     .then((post) => onDeletePost(post))
  }
 
-const site=`http://localhost:9292/posts/${id}`;
+
 
 function newEditing(description) {
 setEdit(description)

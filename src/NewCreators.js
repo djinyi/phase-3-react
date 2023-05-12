@@ -12,7 +12,7 @@ function NewCreator({ addNew }){
             name
         }
         console.log(formData)
-        fetch("http://localhost:9292/posts", {
+        fetch("http://localhost:9292/creators", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
