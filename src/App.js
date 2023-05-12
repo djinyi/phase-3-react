@@ -1,11 +1,30 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 import Posts from "./Posts";
+import NewWebcomic from "./NewWebcomic";
+import Creators from "./Creators";
+import NewCreators from "./NewCreators";
+
 
 function App() {
     return (
-        <div>
+      <div>
+      <NavBar />
+      <Switch>
+          <Route exact path="/">
           <Posts />
-        </div>
+          </Route>
+          <Route exact path="/submitcomics">
+          <NewWebcomic />
+          </Route>
+          <Route exact path="/creators">
+          <Creators/>
+          </Route>
+          <Route exact path="/submitcreator">
+          <NewCreators/>
+          </Route>
+      </Switch>
+  </div>
     )
 }
 
