@@ -1,34 +1,34 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Posts from "./Posts";
 import NewWebcomic from "./NewWebcomic";
+import NavBar from "./NavBar";
 import Creators from "./Creators";
-import NewCreators from "./NewCreators";
-import NavBar from "./NavBar"
+import NewCreators from "./NewCreators"
 
-
-function App() {
-    return (
-      <div>
-      <NavBar />
-      <Switch>
-          <Route exact path="/">
-          <Posts />
-          </Route>
-          <Route exact path="/submitcomics">
-          <NewWebcomic />
-          </Route>
-          <Route exact path="/creators">
-          <Creators/>
-          </Route>
-          <Route exact path="/submitcreator">
-          <NewCreators/>
-          </Route>
-      </Switch>
-  </div>
+function App(){
+    return(
+        <div>
+            <NavBar />
+            <Switch>
+                <Route exact path="/posts">
+                    <Posts />
+                </Route>
+                <Route exact path="/newwebcomic">
+                    <NewWebcomic />
+                </Route>
+                <Route exact path="/creators">
+                    <Creators />
+                </Route>
+                <Route exact path="/newcreators">
+                    <NewCreators />
+                </Route>
+            </Switch>
+        </div>
     )
 }
 
 export default App;
+
 
 
