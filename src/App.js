@@ -4,6 +4,7 @@ import Posts from "./Posts";
 import NewWebcomic from "./NewWebcomic";
 import Creators from "./Creators";
 import NewCreators from "./NewCreators";
+import NavBar from "./NavBar"
 
 
 function App() {
