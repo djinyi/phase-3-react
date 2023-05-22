@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-function NewCreator(){
+function NewCreator({addNew}){
     const [name, setName] = useState("");
 
 
@@ -20,7 +20,7 @@ function NewCreator(){
             body: JSON.stringify(formData)
         })
         .then((r)=>r.json())
-        .then((newCreator)=> console.log(newCreator))
+        .then((newCreator)=> addNew(newCreator))
 
         setName("")
     }

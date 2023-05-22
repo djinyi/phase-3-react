@@ -41,8 +41,6 @@ function App(){
         setPosts([...posts, newWebcomic])
     }
 
-
-
     useEffect(() => {
         fetch("http://localhost:9292/creators")
         .then((r) => r.json())
@@ -52,6 +50,10 @@ function App(){
     const list = creators.map((creator)=>{
         return <p>+ {creator.name}</p>
     })
+
+    function addNewCreator(newCreator){
+        setCreators([...creators, newCreator])
+    }
     
     return(
         <div>
@@ -67,7 +69,7 @@ function App(){
                     <Creators list={list}/>
                 </Route>
                 <Route exact path="/newcreators">
-                    <NewCreators />
+                    <NewCreators addNew={addNewCreator}/>
                 </Route>
             </Switch>
         </div>
