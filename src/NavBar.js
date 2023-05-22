@@ -5,17 +5,17 @@ import styled from "styled-components";
 function NavBar() {
     return (
         <NavStyle>
-            <li><NavLink exact to="/">
+            <li><NavLink exact to="/posts">
                 <p>Webcomics</p>
             </NavLink>
             </li>
-            <li><NavLink to="/about">
+            <li><NavLink to="/newwebcomic">
                 <p>Submit a Webcomic</p>
             </NavLink></li>
-            <li><NavLink to="/PostList">
+            <li><NavLink to="/creators">
                 <p>Creators</p>
             </NavLink></li>
-            <li className="submit"><NavLink to="/submitpost">
+            <li><NavLink to="/newcreators">
                 <p>Submit a Creator</p>
             </NavLink></li>
         </NavStyle>
@@ -33,9 +33,6 @@ overflow: hidden;
 background-color: #333;
 li {
     border-right: 1px solid #bbb;
-  }
-li:last-child {
-    border-right: none;
   }
 li {
     float: left;

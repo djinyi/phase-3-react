@@ -1,21 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-
-function Creators(){
-    const [creators, setCreators] = useState([])
-
-
-    useEffect(() => {
-        fetch("http://localhost:9292/creators")
-        .then((r) => r.json())
-        .then((data) => setCreators(data))
-    }, [])
-
-    const list = creators.map((creator)=>{
-        return <p>+ {creator.name}</p>
-    })
-
-    console.log(list)
+function Creators({list}){
 
     return(
         <div>
