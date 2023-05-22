@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 function NewWebcomic({ addNew }){
     const [title, setTitle] = useState("");
     const [genre, setGenre] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
+
+    const history = useHistory();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -28,6 +31,8 @@ function NewWebcomic({ addNew }){
         setGenre("");
         setDescription("");
         setPrice("");
+
+        history.push("/posts")
     }
 
     return(

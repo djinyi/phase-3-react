@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 function NewCreator({addNew}){
     const [name, setName] = useState("");
 
+    const history = useHistory();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -23,7 +25,9 @@ function NewCreator({addNew}){
         .then((newCreator)=> addNew(newCreator))
 
         setName("")
+        history.push("/creators")
     }
+
 
     return(
         <Detail>
