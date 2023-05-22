@@ -22,7 +22,7 @@ function App(){
         const updatedPosts = posts.filter((poster) => poster.id !== post.id);
         setPosts(updatedPosts)
     }
-    
+    console.log(posts)
     const post = posts.map((webcomic) => (
         <Webcomic
         key={webcomic.id}
@@ -30,7 +30,7 @@ function App(){
         title={webcomic.title}
         genre={webcomic.genre}
         description={webcomic.description}
-        creator={webcomic.id}
+        creator={webcomic.creator.name}
         price={webcomic.price}
         image={webcomic.image}
         onDeletePost={handleDeletePost}
