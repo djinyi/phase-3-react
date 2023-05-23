@@ -29,9 +29,6 @@ function handleSave(e){
 
 
 }
-console.log(edit)
-
-
     return(
         <Detail>
         <label> Edit Description: </label>
