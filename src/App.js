@@ -48,8 +48,11 @@ console.log(posts)
     }, [])
 
     const list = creators.map((creator)=>{
-        return <p>+ {creator.name}</p>
+        return <p><h2>{creator.name}</h2>: {creator.webcomics.map((comic)=>{
+            return <p>{comic.title}</p>
+        })}</p>
     })
+
 
     function addNewCreator(newCreator){
         setCreators([...creators, newCreator])

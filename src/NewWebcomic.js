@@ -81,21 +81,13 @@ function NewWebcomic({ addNew }){
                 value={image}
                 onChange={e=> setImage(e.target.value)}
                 />
-                     <label>
-
-Creator
-
-<select onChange={e=>setCreator_id(e.target.value)}>
-
-  <option value="81">81</option>
-
-  <option value="82">82</option>
-
-  <option value="87">87</option>
-
-</select>
-
-</label>
+                <label>Creator
+                <select onChange={e=>setCreator_id(e.target.value)}>
+                <option value="81">81</option>
+                <option value="82">82</option>
+                <option value="87">87</option>
+                </select>
+                </label>
                 <button type="submit"> Submit </button>
             </form>
             <p></p>
