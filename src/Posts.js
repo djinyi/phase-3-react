@@ -8,6 +8,7 @@ function Posts({post}) {
         <PostStyle className="body">
             <h2>Webcomics for Birds</h2>
             <div>{post}</div>
+
         </PostStyle>
     )
 }

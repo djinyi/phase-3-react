@@ -7,6 +7,8 @@ function NewWebcomic({ addNew }){
     const [genre, setGenre] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
+    const [image, setImage] = useState("");
+    const [creator_id, setCreator_id] = useState([]);
 
     const history = useHistory();
 
@@ -14,7 +16,7 @@ function NewWebcomic({ addNew }){
         e.preventDefault();
 
         const formData = {
-            title, genre, description, price
+            title, genre, description, price, image, creator_id
         }
         console.log(formData)
         fetch("http://localhost:9292/posts", {
@@ -31,8 +33,13 @@ function NewWebcomic({ addNew }){
         setGenre("");
         setDescription("");
         setPrice("");
+        setImage("")
 
-        history.push("/posts")
+        newPage();
+    }
+
+    function newPage(){
+        history.push('/posts')
     }
 
     return(
@@ -67,6 +74,28 @@ function NewWebcomic({ addNew }){
                 value={price}
                 onChange={e=> setPrice(e.target.value)}
                 />
+                <label>  Image</label>
+                <input
+                type="text"
+                id="image"
+                value={image}
+                onChange={e=> setImage(e.target.value)}
+                />
+                     <label>
+
+Creator
+
+<select onChange={e=>setCreator_id(e.target.value)}>
+
+  <option value="81">81</option>
+
+  <option value="82">82</option>
+
+  <option value="87">87</option>
+
+</select>
+
+</label>
                 <button type="submit"> Submit </button>
             </form>
             <p></p>
