@@ -22,7 +22,7 @@ function App(){
         const updatedPosts = posts.filter((poster) => poster.id !== post.id);
         setPosts(updatedPosts)
     }
-console.log(posts)
+
     const post = posts.map((webcomic) => (
         <Webcomic
         key={webcomic.id}
@@ -48,9 +48,7 @@ console.log(posts)
     }, [])
 
     const list = creators.map((creator)=>{
-        return <p><h2>{creator.name}</h2>: {creator.webcomics.map((comic)=>{
-            return <p>{comic.title}</p>
-        })}</p>
+        return <p>{creator.name}</p>
     })
 
 

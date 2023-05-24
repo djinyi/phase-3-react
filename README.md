@@ -16,3 +16,9 @@ There is also an option to edit descriptions of the webcomic entries.
 
 ![edit](https://i.imgur.com/bMBAhwq.gif)
 
+Lastly, there is a page to view creators as well as a page to submit a new creator!
+
+![creators](https://i.imgur.com/LwTTYBk.png)
+
+![submitcreators](https://i.imgur.com/85pagf1.gif)
+

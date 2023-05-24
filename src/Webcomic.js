@@ -17,7 +17,7 @@ function handleDeleteClick() {
     .then((post) => onDeletePost(post))
  }
 
-
+console.log(creator)
 
 function newEditing(description) {
 setEdit(description)
