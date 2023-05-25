@@ -27,7 +27,7 @@ function NewWebcomic({ addNew }){
             body: JSON.stringify(formData)
         })
         .then((r)=>r.json())
-        .then((newWebcomic)=> addNew(newWebcomic))
+        .then((newWebcomic)=> console.log(newWebcomic))
 
         setTitle("");
         setGenre("");
@@ -35,10 +35,6 @@ function NewWebcomic({ addNew }){
         setPrice("");
         setImage("")
 
-        newPage();
-    }
-
-    function newPage(){
         history.push('/posts')
     }
 
